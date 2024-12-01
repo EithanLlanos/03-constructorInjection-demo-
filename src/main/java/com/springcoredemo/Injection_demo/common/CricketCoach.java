@@ -4,12 +4,14 @@ import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-//@Component
-//public class CricketCoach implements Coach {
-
 @Component
-@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-public class CricketCoach implements  Coach{
+public class CricketCoach implements Coach {
+
+
+//Defining bean Scope to SCOPE_PROTOTYPE
+//@Component
+//@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+//public class CricketCoach implements  Coach{
 
     @Override
     public String getDailyWorkout() {

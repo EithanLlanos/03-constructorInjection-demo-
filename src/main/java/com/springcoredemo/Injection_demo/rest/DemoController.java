@@ -12,25 +12,25 @@ public class DemoController {
     private Coach myCoach;
 
 
-//    // define a constructor for dependency injection using @Qualifier
-//    @Autowired
-//    public DemoController(@Qualifier("cricketCoach") Coach theCoach){ myCoach = theCoach;    }
-
-
-    // define a constructor with a bean of multiple instances
-    private Coach anotherCoach;
+    // define a constructor for dependency injection using @Qualifier
     @Autowired
-    public DemoController(
-            @Qualifier("cricketCoach") Coach theCoach,
-            @Qualifier("cricketCoach") Coach theAnotherCoach)
-    { myCoach = theCoach;  anotherCoach = theAnotherCoach;}
+    public DemoController(@Qualifier("cricketCoach") Coach theCoach){ myCoach = theCoach;    }
+
+
+//    // define a constructor with a bean of multiple instances
+//    private Coach anotherCoach;
+//    @Autowired
+//    public DemoController(
+//            @Qualifier("cricketCoach") Coach theCoach,
+//            @Qualifier("cricketCoach") Coach theAnotherCoach)
+//    { myCoach = theCoach;  anotherCoach = theAnotherCoach;}
 
 
 //    // define a setter for setter injection
 //    @Autowired
 //    public void setCoach(Coach theCoach){ myCoach = theCoach;}
 
-//    // define the privatef field as Autowired for field injection (deprecated)
+//    // define the private field as Autowired for field injection (deprecated)
 //    @Autowired
 //    private Coach myCoach;
 
