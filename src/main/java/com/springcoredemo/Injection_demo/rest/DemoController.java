@@ -9,13 +9,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DemoController {
     // define a private field for the dependency
-    private final Coach myCoach;
+    private Coach myCoach;
 
 
-    // define a constructor for dependency injection using @Qualifier
+//    // define a constructor for dependency injection using @Qualifier
+//    @Autowired
+//    public DemoController(@Qualifier("cricketCoach") Coach theCoach){ myCoach = theCoach;    }
+
+
+    // define a constructor with a bean of multiple instances
+    private Coach anotherCoach;
     @Autowired
-    public DemoController(@Qualifier("baseballCoach") Coach theCoach){ myCoach = theCoach;    }
-
+    public DemoController(
+            @Qualifier("cricketCoach") Coach theCoach,
+            @Qualifier("cricketCoach") Coach theAnotherCoach)
+    { myCoach = theCoach;  anotherCoach = theAnotherCoach;}
 
 
 //    // define a setter for setter injection
